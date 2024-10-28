@@ -2,18 +2,18 @@
 const videoData = [
     {
         "name": "Example Video 1",
-        "url": "https://youtu.be/i2n3DXPzG_w?si=Dm5j8dQw_NrfLHv8",
-        "embedUrl": "https://www.youtube.com/embed/i2n3DXPzG_w"
+        "url": "https://youtu.be/1ukSR1GRtMU?si=klul6fPKITArGKk4",
+        "embedUrl": "https://youtu.be/1ukSR1GRtMU?si=klul6fPKITArGKk4"
     },
     {
         "name": "Example Video 2",
-        "url": "https://youtu.be/i2n3DXPzG_w?si=Dm5j8dQw_NrfLHv8",
-        "embedUrl": "https://www.youtube.com/embed/i2n3DXPzG_w"
+        "url": "https://youtu.be/3fumBcKC6RE",
+        "embedUrl": "https://youtu.be/bKueYVtV0eA?si=q9xhLuuVxUB6UVGA"
     },
     {
         "name": "Example Video 3",
-        "url": "https://youtu.be/i2n3DXPzG_w?si=Dm5j8dQw_NrfLHv8",
-        "embedUrl": "https://www.youtube.com/embed/i2n3DXPzG_w"
+        "url": "https://youtu.be/oHg5SJYRHA0",
+        "embedUrl": "https://youtu.be/LtlsX_lCfK4?si=0vwnhpw8tfZ6V4sq"
     }
 ];
 
@@ -51,11 +51,19 @@ function onPlayerStateChange(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const videoContainer = document.getElementById('videoContainer');
 
-    // Create a div for each video
+    // Create a div for each video and display the video names
     videoData.forEach((video, index) => {
+        // Create a div for the video player
         const videoDiv = document.createElement('div');
         videoDiv.id = `player${index}`; // Unique ID for each player
         videoContainer.appendChild(videoDiv);
+
+        // Create a span for the video name
+        const videoName = document.createElement('span');
+        videoName.textContent = video.name;
+
+        // Append the video name below the player
+        videoContainer.appendChild(videoName);
     });
 
     // Populate the predefined video list
